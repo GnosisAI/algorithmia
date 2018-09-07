@@ -1,0 +1,320 @@
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdn.algorithmia.com/versioned/stylesheets/b1504e810271d36311a68b9177b06768-algo.min.css">
+
+</head>
+<body>
+    <div id="app" data-server-rendered="true">
+      <div>
+        <div id="site-banner" data-v-03528ac7>
+          <!---->
+        </div>
+        <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+          <div id="site-banner" data-v-03528ac7>
+            <!---->
+          </div>
+          <div class="container-fluid navbar-container mh-16">
+            <div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#primary-navbar-collapse"
+                aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a
+                href="/" title="Algorithmia - Home" class="navbar-brand active"><span id="nav-logo" class="nav-logo-full"></span></a>
+              <!---->
+            </div>
+            <div id="primary-navbar-collapse" class="collapse navbar-collapse">
+              <div>
+                <ul class="nav navbar-nav navbar-links">
+                  <li class="visible-lg visible-md"><a><span>For Engineering</span></a></li>
+                  <li class="visible-lg visible-md"><a><span>For Data Science</span></a></li>
+                  <li class="visible-lg visible-md"><a><span>For Enterprise</span></a></li>
+                  <li class="hidden-md hidden-lg active"><a href="/algorithms" class="router-link-exact-active active"><span>AI
+                        Marketplace</span></a></li>
+                  <li class="hidden-md hidden-lg"><a href="/serverless">Serverless AI Layer</a></li>
+                  <li class="hidden-md hidden-lg"><a href="/enterprise">Enterprise</a></li>
+                  <li id="industry-dropdown" class="dropdown hidden-md hidden-lg"><a data-toggle="dropdown" href="#"
+                      aria-haspopup="true" aria-expanded="false" class="dropdown-toggle industry-header"><span>Industries</span><span
+                        class="caret ml-8"></span></a>
+                    <ul class="dropdown-menu industry-nav">
+                      <li><a href="/enterprise/finance">Finance</a></li>
+                      <li><a href="/enterprise/government">Government</a></li>
+                      <li><a href="/enterprise/retail">Retail</a></li>
+                      <li><a href="/enterprise/tech">Tech</a></li>
+                      <li><a href="/enterprise/pharma">Pharma</a></li>
+                      <li><a href="/enterprise/energy">Energy</a></li>
+                    </ul>
+                  </li>
+                  <li class="hidden-md hidden-lg"><a href="/developers">Docs</a></li>
+                  <li class="hidden-md hidden-lg"><a href="/pricing">Pricing</a></li>
+                  <!---->
+                  <!---->
+                  <!---->
+                </ul>
+                <!---->
+              </div>
+              <div>
+                <ul class="nav navbar-nav navbar-right navbar-signup">
+                  <div class="hidden-xs hidden-sm">
+                    <li class="dropdown signin-dropdown"><a data-toggle="dropdown" data-target="#" href="/signin" class="dropdown-toggle btn btn-flat navbar-btn">
+                        Sign In
+                      </a>
+                      <div id="dropdown-signin" role="button" aria-labelledby="popup-signin" class="dropdown-menu dropdown-form">
+                        <form>
+                          <div class="modal-header">
+                            <h3 id="popup-signin">Sign In</h3>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group"><label>Email or username</label> <input type="text" value="" class="form-control"></div>
+                            <div class="form-group"><label>Password</label> <input type="password" value="" class="form-control"></div>
+                            <p class="form-control-link"><a href="/reset">Forgot password?</a></p>
+                          </div>
+                          <div class="modal-footer modal-footer-form"><button type="submit" onclick="safeGA('send', 'event', 'signin', 'signinModal')"
+                              class="btn btn-primary">Sign In</button>
+                            <!---->
+                            <div class="text-danger"></div>
+                            <div style="display:none;">
+                              <div class="spinner"><i class="spinner__dot spinner__dot--one"></i> <i class="spinner__dot spinner__dot--two"></i>
+                                <i class="spinner__dot spinner__dot--three"></i></div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="visible-xs visible-sm"><a href="/signin" class="btn btn-flat navbar-btn">
+                      Sign In
+                    </a></div>
+                  <li><button onclick="location.href = '/signup'" class="btn btn-accent">Sign Up For Free</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container content-container" >
+        <div class="row" >
+            <!--
+                =========================================================
+                                    Search bar
+                =========================================================
+            -->
+          <div class="col-md-12 mb-32" >
+            <div class="header-search" >
+              <form id="header-search-form">
+                <div class="input-group"><input name="q" type="search" placeholder="Search..." autocomplete="off" value=""
+                    class="form-control input-lg">
+                  <div class="input-group-btn"><button type="submit" class="btn btn-default btn-lg"><i aria-hidden="true"
+                        class="fa fa-search"></i></button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+            <!--
+                =========================================================
+                                    types Algorithms
+                =========================================================
+            -->
+          <div class="col-md-12" >
+            <div class="categories" >
+              <ul class="grid grid-nav category-grid category-even" >
+                <li class="media category col-md-3" ><a href="/tags/text-analysis" >
+                    <div class="media-left" ><img src="./assets/images/categories/text-analysis.svg" class="media-object category-icon"
+                        ></div>
+                    <div class="media-body" >
+                      <h4 class="media-heading" >Text Analysis</h4>
+                      <p >Make sense of unstructured text</p>
+                    </div>
+                  </a></li>
+                <li class="media category col-md-3" ><a href="/tags/machine-learning" >
+                    <div class="media-left" ><img src="./assets/images/categories/machine-learning.svg"
+                        class="media-object category-icon" ></div>
+                    <div class="media-body" >
+                      <h4 class="media-heading" >Machine Learning</h4>
+                      <p >Teach your app to teach itself</p>
+                    </div>
+                  </a></li>
+                <li class="media category col-md-3" ><a href="/tags/computer-vision" >
+                    <div class="media-left" ><img src="./assets/images/categories/computer-vision.svg"
+                        class="media-object category-icon" ></div>
+                    <div class="media-body" >
+                      <h4 class="media-heading" >Computer Vision</h4>
+                      <p >Identify objects in images</p>
+                    </div>
+                  </a></li>
+                <li class="media category col-md-3" ><a href="/tags/deep-learning" >
+                    <div class="media-left" ><img src="./assets/images/categories/deep-learning.svg" class="media-object category-icon"
+                        ></div>
+                    <div class="media-body" >
+                      <h4 class="media-heading" >Deep Learning</h4>
+                      <p >Learn from your data</p>
+                    </div>
+                  </a></li>
+              </ul>
+            </div>
+
+
+            <!--
+                =========================================================
+                                    Tags
+                =========================================================
+            -->
+
+            <div class="top-tags" ><span class="caption text-secondary" >Popular Tags:
+              </span>
+              <ul class="tag-list" >
+                <li class="tag-item tag-pills" ><a href="/tags/utilities" title="Ready to use microservices"
+                    ><span >Utilities</span></a></li>
+                <li class="tag-item tag-pills" ><a href="/tags/microservices" title="Serverless and simple"
+                    ><span >Microservices</span></a></li>
+                <li class="tag-item tag-pills" ><a href="/tags/web" title="Composable tools you need"
+                    ><span >Web Tools</span></a></li>
+                <li class="tag-item tag-pills" ><a href="/tags/time-series" title="Predicting future results"
+                    ><span >Time Series</span></a></li>
+                <li class="tag-item tag-pills" ><a href="/tags/sentiment-analysis" title="Tools to determine the attitude of content"
+                    ><span >Sentiment Analysis</span></a></li>
+              </ul>
+            </div>
+            <hr >
+          </div>
+          
+
+            <!--
+                =========================================================
+                                    Algorithms list
+                =========================================================
+            -->          
+          
+          
+          
+          <div class="col-md-12" >
+            <h3 class="mb-32" >Browse all algorithms:</h3>
+            <div >
+              <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a role="tab"><i class="fa fa-star"></i> Top Rated</a></li>
+                <li role="presentation"><a role="tab"><i class="fa fa-arrow-circle-o-down"></i> Most Called</a></li>
+                <li role="presentation"><a role="tab"><i class="fa fa-clock-o"></i> Recently Added</a></li>
+              </ul>
+              <div class="tab-content">
+                <div id="top-rated-algorithms" role="tabpanel" class="tab-pane active" style="display:;">
+                  <div >
+                    <!---->
+                    <div class="pv-32 loading" ><span class="mr-8" ><i class="aspinner"
+                          ></i></span><span class="pb-8" >Loading...</span></div>
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div id="most-called-algorithms" role="tabpanel" class="tab-pane active" style="display:none;">
+                  <div >
+                    <!---->
+                    <div class="pv-32 loading" ><span class="mr-8" ><i class="aspinner"
+                          ></i></span><span class="pb-8" >Loading...</span></div>
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-content">
+                <div id="recent-algorithms" role="tabpanel" class="tab-pane active" style="display:none;">
+                  <div >
+                    <!---->
+                    <div class="pv-32 loading" ><span class="mr-8" ><i class="aspinner"
+                          ></i></span><span class="pb-8" >Loading...</span></div>
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+            <!--
+                =========================================================
+                                    Footer
+                =========================================================
+            -->
+
+
+      <footer data-v-34974252>
+        <div class="container" data-v-34974252>
+          <div class="row" data-v-34974252>
+            <div class="col-xs-5 col-sm-4 col-md-2" data-v-34974252><label data-v-34974252>Company</label>
+              <ul class="footer__links" data-v-34974252>
+                <li data-v-34974252><a href="/about" data-v-34974252>About</a></li>
+                <li data-v-34974252><a href="/careers" data-v-34974252>Careers</a> <a href="/careers" class="no-underline"
+                    data-v-34974252><span class="label label-primary ml-4" data-v-34974252>We're Hiring</span></a></li>
+                <li data-v-34974252><a href="https://blog.algorithmia.com" target="_blank" data-v-34974252>Blog</a></li>
+                <li data-v-34974252><a href="/research/ml-models-on-blockchain" data-v-34974252>Research</a></li>
+                <li data-v-34974252><a href="/press" data-v-34974252>Press</a></li>
+                <li data-v-34974252><a href="/partners" data-v-34974252>Partners</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-5 col-sm-4 col-md-2" data-v-34974252><label data-v-34974252>Developers</label>
+              <ul class="footer__links" data-v-34974252>
+                <li data-v-34974252><a href="/getting-started" data-v-34974252>
+                    Getting Started
+                  </a></li>
+                <li data-v-34974252><a href="/data" data-v-34974252>Data</a></li>
+                <li data-v-34974252><a href="/pricing" onclick="safeGA('send', 'event', 'pricing', 'footer');"
+                    data-v-34974252>Pricing</a></li>
+                <li data-v-34974252><a href="/developer" data-v-34974252>
+                    Docs
+                  </a></li>
+              </ul>
+            </div>
+            <div class="col-xs-5 col-sm-4 col-md-2" data-v-34974252><label data-v-34974252>Products</label>
+              <ul class="footer__links" data-v-34974252>
+                <li data-v-34974252><a href="/algorithms" class="router-link-exact-active active" data-v-34974252>
+                    AI Marketplace
+                  </a></li>
+                <li data-v-34974252><a href="/serverless-ai-layer" data-v-34974252>Serverless AI Layer</a></li>
+                <li data-v-34974252><a href="/enterprise" data-v-34974252>Algorithmia Enterprise</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row" data-v-34974252>
+            <div class="col-md-12 footer__footer" data-v-34974252>
+              <div data-v-34974252><img src="/static/images/algo-black.7fb895d.svg" alt="Algorithmia" class="logo-150"
+                  data-v-34974252>
+                <p class="caption footer__tac" data-v-34974252><span class="mr-8" data-v-34974252><i aria-hidden="true"
+                      class="fa fa-copyright" data-v-34974252></i> 2018 — Algorithmia, Inc.</span> <span data-v-34974252><a
+                      href="/privacy" data-v-34974252>Privacy Policy</a><span class="mh-4" data-v-34974252> | </span><a
+                      href="/terms" data-v-34974252>Terms &amp; Conditions</a></span></p>
+              </div>
+              <div class="footer__social" data-v-34974252><a href="https://www.facebook.com/algorithmia" rel="noopener noreferrer"
+                  target="_blank" data-v-34974252><img src="/static/images/facebook-icon.0c07e8c.svg" alt="Facebook"
+                    class="icon icon-social social-fb" data-v-34974252></a> <a href="https://twitter.com/algorithmia" rel="noopener noreferrer"
+                  target="_blank" data-v-34974252><img src="/static/images/twitter-icon.26c33c1.svg" alt="Twitter" class="icon icon-social"
+                    data-v-34974252></a> <a href="https://github.com/algorithmiaio" rel="noopener noreferrer" target="_blank"
+                  data-v-34974252><img src="/static/images/github-icon.c576951.svg" alt="Github" class="icon icon-social"
+                    data-v-34974252></a> <a href="https://www.linkedin.com/company/algorithmia-inc" rel="noopener noreferrer"
+                  target="_blank" data-v-34974252><img src="/static/images/linkedin-icon.b07e9f0.svg" alt="Linkedin"
+                    class="icon icon-social social-li" data-v-34974252></a> <a href="/contact" class="btn btn-default btn-flat btn-sm"
+                  data-v-34974252>Contact Us</a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!---->
+      <!---->
+      <!---->
+    </div>
+  
+  
+  </body>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html data-vue-meta-server-rendered>
+
+<head>
+
+    <title data-vue-meta="true">Sentiment Analysis - Algorithm by nlp - Algorithmia</title>
+
+    <style data-vue-ssr-id="d90e4398:0 5175ba5a:0 31d8d453:0 49a1477c:0 0da9c159:0 0aa2d145:0 89e3f176:0 239e94fc:0 6de593e6:0 18c6397f:0 0f22abcc:0 6ba3ab74:0 1498680c:0 4acccc44:0 6eecfd65:0">.content-container{margin-bottom:4rem}.pt-24,.pv-24{padding-top:1.5rem!important}.pv-24{padding-bottom:1.5rem!important}.mb-24{margin-bottom:1.5rem!important}.mb-40{margin-bottom:2.5rem!important}.mh-auto{margin-left:auto!important;margin-right:auto!important}.spinner-container{display:flex;align-items:center;justify-content:center;width:100%;height:10rem}.dropdown-menu-small.dropdown-menu,.dropdown-menu-small .dropdown-menu{border-top:0;padding-top:0;min-width:10rem}.font-size-small{font-size:.875rem}.col-centered{margin-right:auto;margin-left:auto;float:none}
+.demo-nav{position:relative;z-index:inherit}#industry-dropdown .industry-header{display:flex;align-items:center}#industry-dropdown .industry-nav li a{color:rgba(0,0,0,.54);padding-bottom:1rem}#industry-dropdown .industry-nav li.active a,#industry-dropdown .industry-nav li a:hover{color:#5000be}.navbar-container{position:relative}.navbar{padding:0;box-shadow:none;transition:all .3s ease-in-out;border-bottom:1px solid rgba(0,0,0,.12)}.navbar-dropdown-container{position:absolute;top:63px;right:0;left:-16px;width:100vw;min-height:20rem;background-color:#fff;box-shadow:0 2px 4px -1px rgba(0,0,0,.06)}.navbar-description-block{margin-bottom:1rem;width:100%;height:7.5rem;background-size:cover;background-repeat:no-repeat;background-position:50%}.navbar-description-block.engineers{background-image:url(https://cdn.algorithmia.com/static/images/engineers-description-block.14a4f6d.svg)}.navbar-description-block.data-science{background-image:url(https://cdn.algorithmia.com/static/images/data-science-description-block.5daae6f.svg)}a{cursor:pointer}@media (min-width:1200px){.demo-nav .navbar-form #header-search-form{width:15rem}}
+#site-banner .banner a{font-weight:500;text-transform:none}
+.banner[data-v-03528ac7]{border-bottom:.0625rem solid rgba(0,0,0,.12);border-radius:0;background-color:#fff}.banner .banner-text[data-v-03528ac7]{display:flex;justify-content:center;align-items:center;margin-right:3rem;margin-left:1rem}.banner .banner-text .banner-content[data-v-03528ac7]{vertical-align:middle;line-height:1.75}.banner .close-button[data-v-03528ac7]{position:absolute;right:2rem;top:1.2rem}.banner .close-button[data-v-03528ac7]:hover{background-color:inherit;opacity:.7}
+.algo-cards[]{padding-top:2rem;padding-bottom:2rem;min-height:15.625rem}
+.algo-banner[]{margin-top:-2rem;padding:2rem 0;background-color:#fafafa}.algo-banner .banner--head[]{display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;flex-wrap:wrap}.algo-banner .banner--uri[]{font-size:1.25rem}.algo-banner .banner--user-img[]{width:3rem;height:3rem;border-radius:3rem;margin-right:1rem}.algo-banner .banner--actions[]{margin:0;margin-top:1rem;padding:0;list-style-type:none;display:flex;display:-webkit-flex}@media (min-width:992px){.algo-banner .banner--actions[]{margin:0}}.algo-banner .banner--actions li[]{margin-right:1rem}.algo-banner .banner--actions li[]:last-child{margin-right:0}.algo-banner .algo-banner-stats[]{background-color:#fafafa;text-align:center}.algo-banner .algo-banner-stats i[]{color:#5000be}.algo-banner .algo-banner-stats .btn[disabled][]{opacity:1}.algo-banner .banner-tagline[]{margin-top:1rem;font-size:18px;margin-bottom:45px}.algo-banner .banner-button[],.algo-banner .banner-cost[],.algo-banner .banner-info[],.algo-banner .banner-version[]{position:absolute}.algo-banner .banner-cost[],.algo-banner .banner-version[]{top:10px}.algo-banner .banner-button[],.algo-banner .banner-info[]{bottom:10px}.algo-banner .banner-info[],.algo-banner .banner-version[]{left:10px}.algo-banner .banner-button[],.algo-banner .banner-cost[]{right:10px}.algo-banner .banner-button a[]{margin-bottom:-10px}.algo-banner .banner-button .btn-light[]{border-bottom:none}
+.algo-card--nav[]{background-color:#fafafa;margin-bottom:2rem;border-bottom:.0625rem solid rgba(0,0,0,.12)}.algo-card--nav .nav-tabs[]{margin-bottom:0;border-bottom:none}
+
+.algo--shields[]{margin-bottom:1rem}.algo-run--img[]{max-height:300px;max-width:100%}@media (min-width:992px){.algo-run--img[]{max-height:400px}}.algo-run--img__fallback[]{width:100%;max-height:260px;opacity:.1}.algo-run--tags ul[]{margin:0;padding:0;list-style:none}.algo-run--tags .tag-editor[]{margin-top:1rem;max-width:300px}.algo-run--tags .algo-tags li[]{display:inline-block;margin-right:.5rem}.algo-run--tags .algo-tags li[]:last-child{margin-right:0}.algo-run--tags .tag-pills>a[]{background-color:#f5f5f5;border-radius:0;padding:3px 6px;color:#5000be}.algo-run--tags .tag-pills>a[]:hover{background-color:#dcdcdc}
+
+.console-container pre[]{margin:0;padding:0;height:210px}.console-container pre code[]{padding:1rem}
+.nav li[data-v-16f1f459]{text-align:center}.nav li a .lang-logo[data-v-16f1f459]{height:40px;width:40px;margin-left:auto;margin-right:auto}.nav li a .color-logo[data-v-16f1f459]{transition:all .2s ease-in-out}.nav li a .color-logo.curl[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/curl.1baf658.svg)}.nav li a .color-logo.cli[data-v-16f1f459]{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8Y2lyY2xlICBmaWxsPSIjMjIyMjIyIiBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiPjwvY2lyY2xlPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi4wMDAwMDAsIDEwLjAwMDAwMCkiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2U9IiNGRkZGRkYiPgogICAgICAgIDxwb2x5bGluZSBpZD0iUGF0aC0zIiBwb2ludHM9IjAuNzAzMDMwMzAzIDAgMTAuMDIzNzI1MiA5LjUxMjUzMjQ5IDAuNzY2NzUyOCAxOC45NjAwMzEiIGZpbGw9Im5vbmUiPjwvcG9seWxpbmU+CiAgICAgICAgPHBhdGggZD0iTTE0LjYyOTcyNTgsMTguMiBMMjguNjU3NDY4NSwxOC4yIiBpZD0iUGF0aC0yIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==)}.nav li a .color-logo.go[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/go.bd3e6ca.svg)}.nav li a .color-logo.java[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/java.1ba8776.svg)}.nav li a .color-logo.js[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/js.7758437.svg)}.nav li a .color-logo.csharp[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/csharp.50b6602.svg)}.nav li a .color-logo.node[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/node.411c9b4.svg)}.nav li a .color-logo.php[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/php.d74e97a.svg)}.nav li a .color-logo.python[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/python.6e0ff20.svg)}.nav li a .color-logo.rlang[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/rlang.4409698.svg)}.nav li a .color-logo.ruby[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/ruby.334331f.svg)}.nav li a .color-logo.rust[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/rust.35fb347.svg)}.nav li a .color-logo.scala[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/scala.a000d41.svg)}.nav li a .color-logo.swift[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/swift.2206091.svg)}.nav li a .grayscale-logo[data-v-16f1f459]{opacity:.15;transition:all .2s ease-in-out}.nav li a .grayscale-logo.curl[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/curl.bf44d1b.svg)}.nav li a .grayscale-logo.cli[data-v-16f1f459]{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8Y2lyY2xlICBmaWxsPSJibGFjayIgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIj48L2NpcmNsZT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAxMC4wMDAwMDApIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlPSIjRkZGRkZGIj4KICAgICAgICA8cG9seWxpbmUgaWQ9IlBhdGgtMyIgcG9pbnRzPSIwLjcwMzAzMDMwMyAwIDEwLjAyMzcyNTIgOS41MTI1MzI0OSAwLjc2Njc1MjggMTguOTYwMDMxIiBmaWxsPSJub25lIj48L3BvbHlsaW5lPgogICAgICAgIDxwYXRoIGQ9Ik0xNC42Mjk3MjU4LDE4LjIgTDI4LjY1NzQ2ODUsMTguMiIgaWQ9IlBhdGgtMiI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=)}.nav li a .grayscale-logo.go[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/go.262f2f0.svg)}.nav li a .grayscale-logo.java[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/java.7afbfc8.svg)}.nav li a .grayscale-logo.js[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/js.1a7bb34.svg)}.nav li a .grayscale-logo.csharp[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/csharp.aa2c289.svg)}.nav li a .grayscale-logo.node[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/node.f15b71b.svg)}.nav li a .grayscale-logo.php[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/php.68d1b19.svg)}.nav li a .grayscale-logo.python[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/python.17c7d56.svg)}.nav li a .grayscale-logo.rlang[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/rlang.a877ba5.svg)}.nav li a .grayscale-logo.ruby[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/ruby.c753e96.svg)}.nav li a .grayscale-logo.rust[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/rust.f75af40.svg)}.nav li a .grayscale-logo.scala[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/scala.9669ff6.svg)}.nav li a .grayscale-logo.swift[data-v-16f1f459]{background-image:url(https://cdn.algorithmia.com/static/images/swift.ea958a5.svg)}.nav li a[data-v-16f1f459]:hover{color:rgba(0,0,0,.87)}.nav li a:hover .grayscale-logo[data-v-16f1f459]{opacity:.54}.nav.nav-tabs>li+li[data-v-16f1f459]{margin-left:0}.code-icons--icon[data-v-16f1f459]{cursor:pointer;user-select:none}
+.hljs-change,.hljs-flow,.hljs-keyword,.hljs-literal,.hljs-strong,.hljs-tag,.hljs-tag .hljs-title,.hljs-winutils,.nginx .hljs-title,.tex .hljs-special{color:#f92672}.hljs{color:#ddd}.asciidoc .hljs-code,.hljs .hljs-constant,.markdown .hljs-code{color:#66d9ef}.hljs-class .hljs-title,.hljs-code,.hljs-header{color:#fff}.hljs-attribute,.hljs-link_label,.hljs-regexp,.hljs-symbol,.hljs-symbol .hljs-string,.hljs-value{color:#bf79db}.apache .hljs-cbracket,.apache .hljs-tag,.django .hljs-filter .hljs-argument,.django .hljs-template_tag,.django .hljs-variable,.hljs-addition,.hljs-attr_selector,.hljs-built_in,.hljs-bullet,.hljs-emphasis,.hljs-envvar,.hljs-link_url,.hljs-name,.hljs-pragma,.hljs-preprocessor,.hljs-prompt,.hljs-pseudo,.hljs-stream,.hljs-string,.hljs-subst,.hljs-tag .hljs-value,.hljs-title,.hljs-type,.ruby .hljs-class .hljs-parent,.smalltalk .hljs-array,.smalltalk .hljs-class,.smalltalk .hljs-localvars,.tex .hljs-command{color:#a6e22e}.apache .hljs-sqbracket,.hljs-annotation,.hljs-blockquote,.hljs-comment,.hljs-decorator,.hljs-deletion,.hljs-doctype,.hljs-horizontal_rule,.hljs-pi,.hljs-shebang,.smartquote,.tex .hljs-formula{color:#75715e}.apache .hljs-tag,.bash .hljs-variable,.css .hljs-id,.diff .hljs-header,.hljs-chunk,.hljs-doctag,.hljs-header,.hljs-keyword,.hljs-literal,.hljs-request,.hljs-status,.hljs-title,.hljs-type,.hljs-winutils,.rsl .hljs-built_in,.smalltalk .hljs-class,.tex .hljs-special,.vbscript .hljs-built_in{font-weight:700}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .css,.xml .hljs-cdata,.xml .javascript,.xml .vbscript{opacity:.5}
+.docs-btn[data-v-23400790]{text-align:right;margin-top:-.5rem}.dropdown[data-v-23400790]{cursor:pointer;color:rgba(0,0,0,.54)}.dropdown[data-v-23400790]:hover{color:rgba(0,0,0,.87)}.dropup[data-v-23400790]{cursor:pointer;color:rgba(0,0,0,.87)}
+footer[data-v-34974252]{margin-top:0}.no-underline[data-v-34974252]:hover{text-decoration:none}</style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js"></script>
+
+
+</head>
+
+<body>
+    <div id="app" data-server-rendered="true">
+        <div>
+            <div id="site-banner" data-v-03528ac7>
+                <!---->
+            </div>
+            <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+                <div id="site-banner" data-v-03528ac7>
+                    <!---->
+                </div>
+                <div class="container-fluid navbar-container mh-16">
+                    <div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#primary-navbar-collapse"
+                            aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle
+                                navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span></button> <a href="/" title="Algorithmia - Home" class="navbar-brand active"><span
+                                id="nav-logo" class="nav-logo-full"></span></a>
+                        <!---->
+                    </div>
+                    <div id="primary-navbar-collapse" class="collapse navbar-collapse">
+                        <div>
+                            <ul class="nav navbar-nav navbar-links">
+                                <li class="visible-lg visible-md"><a><span>For Engineering</span></a></li>
+                                <li class="visible-lg visible-md"><a><span>For Data Science</span></a></li>
+                                <li class="visible-lg visible-md"><a><span>For Enterprise</span></a></li>
+                                <li class="hidden-md hidden-lg active"><a href="/algorithms" class="active"><span>AI
+                                            Marketplace</span></a></li>
+                                <li class="hidden-md hidden-lg"><a href="/serverless">Serverless AI Layer</a></li>
+                                <li class="hidden-md hidden-lg"><a href="/enterprise">Enterprise</a></li>
+                                <li id="industry-dropdown" class="dropdown hidden-md hidden-lg"><a data-toggle="dropdown"
+                                        href="#" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle industry-header"><span>Industries</span><span
+                                            class="caret ml-8"></span></a>
+                                    <ul class="dropdown-menu industry-nav">
+                                        <li><a href="/enterprise/finance">Finance</a></li>
+                                        <li><a href="/enterprise/government">Government</a></li>
+                                        <li><a href="/enterprise/retail">Retail</a></li>
+                                        <li><a href="/enterprise/tech">Tech</a></li>
+                                        <li><a href="/enterprise/pharma">Pharma</a></li>
+                                        <li><a href="/enterprise/energy">Energy</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hidden-md hidden-lg"><a href="/developers">Docs</a></li>
+                                <li class="hidden-md hidden-lg"><a href="/pricing">Pricing</a></li>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </ul>
+                            <!---->
+                        </div>
+                        <div>
+                            <ul class="nav navbar-nav navbar-right navbar-signup">
+                                <div class="hidden-xs hidden-sm">
+                                    <li class="dropdown signin-dropdown"><a data-toggle="dropdown" data-target="#" href="/signin"
+                                            class="dropdown-toggle btn btn-flat navbar-btn">
+                                            Sign In
+                                        </a>
+                                        <div id="dropdown-signin" role="button" aria-labelledby="popup-signin" class="dropdown-menu dropdown-form">
+                                            <form>
+                                                <div class="modal-header">
+                                                    <h3 id="popup-signin">Sign In</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group"><label>Email or username</label> <input
+                                                            type="text" value="" class="form-control"></div>
+                                                    <div class="form-group"><label>Password</label> <input type="password"
+                                                            value="" class="form-control"></div>
+                                                    <p class="form-control-link"><a href="/reset">Forgot password?</a></p>
+                                                </div>
+                                                <div class="modal-footer modal-footer-form"><button type="submit"
+                                                        onclick="safeGA('send', 'event', 'signin', 'signinModal')"
+                                                        class="btn btn-primary">Sign In</button>
+                                                    <!---->
+                                                    <div class="text-danger"></div>
+                                                    <div style="display:none;">
+                                                        <div class="spinner"><i class="spinner__dot spinner__dot--one"></i>
+                                                            <i class="spinner__dot spinner__dot--two"></i> <i class="spinner__dot spinner__dot--three"></i></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="visible-xs visible-sm"><a href="/signin" class="btn btn-flat navbar-btn">
+                                        Sign In
+                                    </a></div>
+                                <li><button onclick="location.href = '/signup'" class="btn btn-accent">Sign Up For Free</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fullscreen content-container" >
+            <div >
+                <div class="algo-banner"  >
+                    <div class="container" >
+                        <div class="row" >
+                            <div class="col-md-12" >
+                                <div class="banner--head" >
+                                    <div class="banner--uri" ><img src="/users/nlp/avatar" alt="nlp"
+                                            class="banner--user-img noselect" > <a href="/users/nlp"
+                                            >nlp</a><span >/</span><span class="font-weight-bold"
+                                            >SentimentAnalysis</span><span ><span
+                                                >/</span>1.0.5</span> <a class="btn btn-primary btn-flat btn-inline-action noselect"
+                                            >copy</a></div>
+                                    <ul class="banner--actions noselect" >
+                                        <li >
+                                            <div class="btn-group btn-count" ><button type="button"
+                                                    title="Star Algorithm" disabled="disabled" class="btn"
+                                                    ><i class="fa fa-star-o" ></i><span
+                                                        > Star</span></button> <button type="button"
+                                                    class="btn" >146</button></div>
+                                        </li>
+                                        <li >
+                                            <div class="btn-group btn-count" ><button title="FollowAlgorithm"
+                                                    disabled="disabled" class="btn" ><i class="fa fa-comments-o"
+                                                        ></i><span > Follow</span></button>
+                                                <button type="button" class="btn" >87</button></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="algo-card--nav"  >
+                    <div class="container" >
+                        <div class="row" >
+                            <div class="col-md-12" >
+                                <nav >
+                                    <ul class="nav nav-tabs hidden-xs hidden-sm" >
+                                        <li onclick="safeGA('send', 'event', 'algocard', 'run');" class="router-link-exact-active active"
+                                            ><a href="/algorithms/nlp/SentimentAnalysis/"
+                                                >Run</a></li>
+                                        <li onclick="safeGA('send', 'event', 'algocard', 'description');"
+                                            ><a href="/algorithms/nlp/SentimentAnalysis/docs"
+                                                >Docs</a></li>
+                                        <li onclick="safeGA('send', 'event', 'algocard', 'pricing');" ><a
+                                                href="/algorithms/nlp/SentimentAnalysis/pricing" >Cost</a></li>
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <li onclick="safeGA('send', 'event', 'algocard', 'discussion');"
+                                            ><a href="/algorithms/nlp/SentimentAnalysis/discussion"
+                                                >Discussion</a></li>
+                                        <!---->
+                                        <li class="algo-source" ><a href="/algorithms/nlp/SentimentAnalysis/edit"
+                                                >Source →</a></li>
+                                    </ul>
+                                    <ul class="nav nav-tabs visible-xs visible-sm" >
+                                        <li class="dropdown" ><a data-toggle="dropdown" href="#" class="dropdown-toggle"
+                                                >Navigation
+                                                <span class="caret" ></span></a>
+                                            <ul class="dropdown-menu" >
+                                                <li onclick="safeGA('send', 'event', 'algocard', 'run');" class="router-link-exact-active active"
+                                                    ><a href="/algorithms/nlp/SentimentAnalysis/"
+                                                        >Run</a></li>
+                                                <li onclick="safeGA('send', 'event', 'algocard', 'description');"
+                                                    ><a href="/algorithms/nlp/SentimentAnalysis/docs"
+                                                        >Docs</a></li>
+                                                <li onclick="safeGA('send', 'event', 'algocard', 'pricing');"
+                                                    ><a href="/algorithms/nlp/SentimentAnalysis/pricing"
+                                                        >Cost</a></li>
+                                                <!---->
+                                                <!---->
+                                                <!---->
+                                                <li onclick="safeGA('send', 'event', 'algocard', 'discussion');"
+                                                    ><a href="/algorithms/nlp/SentimentAnalysis/discussion"
+                                                        >Discussion</a></li>
+                                                <!---->
+                                                <li class="algo-source" ><a href="/algorithms/nlp/SentimentAnalysis/edit"
+                                                        >Source →</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="algo-cards" >
+                    <div class="run-card"   >
+                        <div class="container"  >
+                            <div class="row section" >
+                                <div class="col-md-7" >
+                                    <div class="row" >
+                                        <div class="col-md-12" >
+                                            <h2 ><span style="display:;" >Sentiment
+                                                    Analysis</span>
+                                                <!---->
+                                                <!---->
+                                            </h2>
+                                        </div>
+                                        <div class="col-sm-12" >
+                                            <p class="lead" >Determine positive or negative sentiment
+                                                from text</p>
+                                        </div>
+                                        <div class="col-md-12 algo--shields" ><span ><label
+                                                    title="Cost" class="text-success mr-4" >Royalty-free</label></span>
+                                            <!----> <img src="https://img.shields.io/badge/API%20calls-17,322,786-5000BE.svg?style=flat"
+                                                >
+                                            <!---->
+                                        </div>
+                                        <div class="col-sm-12 hidden-md hidden-lg text-center m-B-l" >
+                                            <!---->
+                                        </div>
+                                        <div class="col-sm-12 algo-run--tags" >
+                                            <div controller="TagControl" class="algo-tags" 
+                                                ><label title="Algorithm Tags" >Tags</label>
+                                                <!---->
+                                                <div style="display:none;" >
+                                                    <p class="caption text-secondary" >(no tags)</p>
+                                                </div>
+                                                <div class="tag-item text-danger" style="display:none;" ><i
+                                                        class="fa fa-warning" ></i>
+                                                </div>
+                                                <ul class="tag-list" >
+                                                    <li class="tag-item tag-pills" ><a href="/tags/microservices"
+                                                            >microservices</a>
+                                                        <!---->
+                                                    </li>
+                                                    <li class="tag-item tag-pills" ><a href="/tags/nlp"
+                                                            >nlp</a>
+                                                        <!---->
+                                                    </li>
+                                                    <li class="tag-item tag-pills" ><a href="/tags/sentiment-analysis"
+                                                            >sentiment analysis</a>
+                                                        <!---->
+                                                    </li>
+                                                    <li class="tag-item tag-pills" ><a href="/tags/stanford-corenlp"
+                                                            >stanford corenlp</a>
+                                                        <!---->
+                                                    </li>
+                                                    <li class="tag-item tag-pills" ><a href="/tags/text-analysis"
+                                                            >text analysis</a>
+                                                        <!---->
+                                                    </li>
+                                                </ul>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 algo--permissions" >
+                                            <div ><label >Permissions</label></div>
+                                            <!----> <span >Algorithmia Platform License</span> <span
+                                                >
+                                                · <a id="internet-popover-target" >Internet Access</a>
+                                                <span style="display:none;" ><span >
+                                                        <div style="display:block;">
+                                                            <div class="arrow"></div>
+                                                            <h3 class="popover-title">This algorithm has Internet
+                                                                access.</h3>
+                                                            <div class="popover-content">
+                                                                <div >
+                                                                    This is necessary for algorithms that rely on
+                                                                    external services, however it also implies that
+                                                                    this algorithm is able to send your input data
+                                                                    outside of the Algorithmia platform.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span></span></span> <span >
+                                                · <a id="calls-other-popover-target" >Calls Other
+                                                    Algorithms</a> <span style="display:none;" ><span
+                                                        >
+                                                        <div style="display:block;">
+                                                            <div class="arrow"></div>
+                                                            <h3 class="popover-title">This algorithm has permission to
+                                                                call other algorithms.</h3>
+                                                            <div class="popover-content">
+                                                                <div >
+                                                                    This allows an algorithm to compose sophisticated
+                                                                    functionality using other algorithms as building
+                                                                    blocks, however it also carries the potential of
+                                                                    incurring additional royalty and usage costs from
+                                                                    any algorithm that it calls.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span></span></span>
+                                            <!----> <br >
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 hidden-sm hidden-xs text-center" ><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjM2cHgiIGhlaWdodD0iMzZweCIgdmlld0JveD0iMCAwIDM2IDM2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPkFsZ29yaXRobWlhIEJpbmFyeSBUcmVlPC90aXRsZT4KICAgIDxwb2x5Z29uCiAgICAgICAgc3R5bGU9ImZpbGw6IzUwMDBiZSIKICAgICAgICBwb2ludHM9IjEzLjU4ODcxNywyOC41NTM0MzYgMjEuMDAwMTksMTMuNjMwNDUgMjguNDExMjgzLDI4LjU1MzQzNiAyMi45OTAxMTEsNDIgMjkuMDM0ODcsNDIgMzEuODY0MjM1LDM1LjMyNzU0NCAzNS4yMTUxNTksNDIgNDIsNDIgMjEuMDAwMTksMCAwLDQyIDYuNzg1OTgzLDQyIDEwLjEzNTc2NSwzNS4zMjc1NDQgMTIuOTY1MTMsNDIgMTkuMDA4NzQ3LDQyICIKICAgICAgICB0cmFuc2Zvcm09InNjYWxlKDAuODU3MTQyODYsMC44NTcxNDI4NikiIC8+CiA8L3N2Zz4="
+                                        class="algo-run--img__fallback" ></div>
+                            </div>
+                        </div>
+                        <div  >
+                            <div class="algo-console" >
+                                <div class="container" >
+                                    <div class="row section" >
+                                        <div class="col-md-12" >
+                                            <h2 >Run an Example</h2>
+                                        </div>
+                                        <div class="console-input col-md-6" >
+                                            <div class="code-toolbar" ><label class="code-toolbar-label"
+                                                    >INPUT</label></div>
+                                            <div id="input-editor" class="console-container mb-4" ></div>
+                                            <div class="text-right mb-16" >
+                                                <div ><button onclick="location.href = '/signup'" class="btn btn-accent btn-raised"
+                                                        >Sign Up &amp; Run for Free</button></div>
+                                            </div>
+                                        </div>
+                                        <div class="console-output col-md-6" >
+                                            <div class="code-toolbar" ><label class="code-toolbar-label"
+                                                    >OUTPUT</label></div>
+                                            <div class="console-container" >
+                                                <div id="console-output-div" style="display:;" >
+                                                    <pre ><code class="hljs json" >[
+  {
+    &quot;sentiment&quot;: 0.474,
+    &quot;document&quot;: &quot;I really like Algorithmia!&quot;
+  }
+]</code></pre>
+                                                </div>
+                                                <div style="display:none;" >
+                                                    <pre ><code class="algo-error" ></code></pre>
+                                                </div>
+                                                <div class="text-light-primary pa-16" style="display:none;"
+                                                    >
+                                                    <div class="spinner"><i class="spinner__dot spinner__dot--one"></i>
+                                                        <i class="spinner__dot spinner__dot--two"></i> <i class="spinner__dot spinner__dot--three"></i></div>
+                                                    Running algorithm...
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!---->
+        <!---->
+    </div>
+
+</body>
+
+</html>
