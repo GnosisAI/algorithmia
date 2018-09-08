@@ -13,7 +13,7 @@ export default new VueRouter({
             component: Container
         },
         {
-            path: '/algorithm/',
+            path: '/algorithm/:id',
             name: 'Algorithm',
             component: Algorithm
         },

@@ -1,6 +1,7 @@
 <template>
     <div class="top-tags" >
-        <span class="caption text-secondary" >Popular Tags:</span>
+                          <div ><label >Tags</label></div>
+
             <ul class="tag-list" >
                 <li class="tag-item tag-pills" ><a href="/tags/utilities" title="Ready to use microservices"
                     ><span >Utilities</span></a></li>

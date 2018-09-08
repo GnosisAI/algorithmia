@@ -8,9 +8,10 @@
             </div> 
             <div class="algo-info">
                 <div>
-                    <a href="/algorithms/keshavashiya/Hello" class="algo-list-link">
-                    <span class="algo-info__name">{{title}}</span>
-                    </a> 
+                    <router-link  class="algo-list-link" :to="'/algorithm/'+id">
+                        <span class="algo-info__name">{{title}}</span>
+                    </router-link>
+
                     <p class="algo-url">{{id}}</p> 
                     <p class="algo-list-body">{{desc}}</p>
                 </div> 
