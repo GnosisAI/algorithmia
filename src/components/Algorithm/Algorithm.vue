@@ -1,72 +1,78 @@
 <template lang="html">
-
-  <section class="algorithm">
-    <div class="jumbotron">
-      <h4 class="text-center"> <span>deeplearning/</span><strong>ColorfulImageColorization/</strong>{{ $route.params.id }}</h4>
-    </div>
-
-
-    <Banner/>
-    <br>
-
-    <div class="container">
-      <div class="row">
-          <div class="col-md-12" ><h2 >Run an Example</h2></div>
-        <div class="col-md-6">
-            <console title="INPUT"/>
-        <div class="text-center">
-                    <button v-on:click="log()" class="btn btn-accent btn-raised" >Run for Free</button>        
-        </div>
-        <br>
+   <section class="algorithm">
+      <div class="jumbotron">
+         <h4 class="text-center"> <span>deeplearning/</span><strong>ColorfulImageColorization/</strong>{{ $route.params.id }}</h4>
       </div>
-        <div class="col-md-6">
-              <console title="OUTPUT"/>
-        </div>
+      <Banner/>
+      <br>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12" >
+               <h2 >Run an Example</h2>
+            </div>
+            <div class="col-md-6">
+               <input-console v-on:submit="onSubmit"/>
+               <div class="text-center">
+               </div>
+               <br>
+            </div>
+            <div class="col-md-6">
+               <output-console :output="result"/>
+            </div>
+         </div>
+         <hr>
+         <hr>
+         <div class="list-group">
+            <a href="#" class="list-group-item ">
+               <h4 class="list-group-item-heading"><i class="fab fa-github-square fa-3x"></i>
+                  Github
+               </h4>
+               <p class="list-group-item-text">...</p>
+            </a>
+            <a href="#" class="list-group-item ">
+               <h4 class="list-group-item-heading"><i class="fab fa-kaggle fa-3x"></i>
+                  Kaggle 
+               </h4>
+               <p class="list-group-item-text">...</p>
+            </a>
+            <a href="#" class="list-group-item ">
+               <h4 class="list-group-item-heading"><i class="fab fa-wikipedia-w fa-3x"></i>
+                  Wiki
+               </h4>
+               <p class="list-group-item-text">read more about convolution...</p>
+            </a>
+         </div>
       </div>
-          <hr>
-    <hr>
-
-       <div class="list-group">
-  <a href="#" class="list-group-item ">
-    <h4 class="list-group-item-heading"><i class="fab fa-github-square fa-3x"></i>
-
-Github</h4>
-    <p class="list-group-item-text">...</p>
-  </a>
-    <a href="#" class="list-group-item ">
-    <h4 class="list-group-item-heading"><i class="fab fa-kaggle fa-3x"></i>
-
-Kaggle </h4>
-    <p class="list-group-item-text">...</p>
-  </a>
-    <a href="#" class="list-group-item ">
-    <h4 class="list-group-item-heading"><i class="fab fa-wikipedia-w fa-3x"></i>
-
-Wiki</h4>
-    <p class="list-group-item-text">read more about convolution...</p>
-  </a>
-</div>
-    
-    </div>
- 
-  </section>
-
+   </section>
 </template>
 
 <script lang="js">
-import Console from './Console.vue'
+import InputConsole from './InputConsole.vue'
+import OutputConsole from './OutputConsole.vue'
+
 import Banner from './Banner.vue'
 
   export default  {
     name: 'algorithm',
     components:{
-      Console,
+      InputConsole,
+      OutputConsole,
       Banner
       
     },    
     methods:{
-      log() {
-        console.log('hiii')
+      onSubmit(value){
+          this.output = value
+
+      }
+    },
+    data(){
+      return {output:''}
+    },
+    computed:{
+      result(){
+        return this.output 
+
       }
     }
 }
@@ -84,9 +90,5 @@ h4{
 .jumbotron span{
   color: #5000be
 }
-.btn-accent {
-    color: rgba(0,0,0,.87);
-    background-color: #50ffbe;
-    border-color: #50ffbe;
-}
+
 </style>
