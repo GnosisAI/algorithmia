@@ -2,11 +2,11 @@
     <div class="col-md-12" >
             <div class="categories" >
               <ul class="grid grid-nav category-grid category-even" >
-                <Item v-for="item in items" v-bind="item" />
+                <Item v-for="(item, index) in items" :key="index" v-bind="item" />
               </ul>
             </div>
             <!--        Tags        -->
-            <Tags/>
+            <Tags v-bind:tags="tags"/>
         <hr >
     </div>
 
@@ -23,6 +23,9 @@ export default {
   },
   data(){
       return{
+          tags:[
+              "utilities", "microservices","web","Sentiment Analysis"
+          ],
           items :[
               {
                   img:"text-analysis.svg",

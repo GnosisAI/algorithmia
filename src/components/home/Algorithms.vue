@@ -16,7 +16,7 @@
                       <span class="pb-8" >Loading...</span>
                     </div>
                     <div v-if="show">
-                      <algo-item v-for="algo in algorithms" v-bind="algo" />
+                      <algo-item v-for="algo in algorithmsList" :key="algo.id" v-bind="algo" />
                     </div>
                     <!---->
                   </div>
@@ -48,6 +48,7 @@
             </div>
           </div>
 
+
 </template>
 <script>
 import AlgoItem from './AlgoItem'
@@ -55,6 +56,15 @@ export default {
   name: 'Algorithms',
   components:{
     AlgoItem
+  },
+  created(){
+    this.$store.dispatch('getAlgos');
+  },
+  computed:{
+    algorithmsList(){
+
+      return this.$store.state.algorithms
+    }
   },
   show:false,
   data(){

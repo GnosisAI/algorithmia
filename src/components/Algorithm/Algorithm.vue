@@ -1,9 +1,9 @@
 <template lang="html">
    <section class="algorithm">
       <div class="jumbotron">
-         <h4 class="text-center"> <span>deeplearning/</span><strong>ColorfulImageColorization/</strong>{{ $route.params.id }}</h4>
+         <h4 class="text-center"> <span>{{algo.category[0]}}/</span><strong>{{algo.name}}/</strong>{{ algo.version }}</h4>
       </div>
-      <Banner/>
+      <Banner v-bind="algo"/>
       <br>
       <div class="container">
          <div class="row">
@@ -22,26 +22,7 @@
          </div>
          <hr>
          <hr>
-         <div class="list-group">
-            <a href="#" class="list-group-item ">
-               <h4 class="list-group-item-heading"><i class="fab fa-github-square fa-3x"></i>
-                  Github
-               </h4>
-               <p class="list-group-item-text">...</p>
-            </a>
-            <a href="#" class="list-group-item ">
-               <h4 class="list-group-item-heading"><i class="fab fa-kaggle fa-3x"></i>
-                  Kaggle 
-               </h4>
-               <p class="list-group-item-text">...</p>
-            </a>
-            <a href="#" class="list-group-item ">
-               <h4 class="list-group-item-heading"><i class="fab fa-wikipedia-w fa-3x"></i>
-                  Wiki
-               </h4>
-               <p class="list-group-item-text">read more about convolution...</p>
-            </a>
-         </div>
+        <Links v-bind:links="algo.links"/>
       </div>
    </section>
 </template>
@@ -49,6 +30,8 @@
 <script lang="js">
 import InputConsole from './InputConsole.vue'
 import OutputConsole from './OutputConsole.vue'
+import Links from './Links.vue'
+
 
 import Banner from './Banner.vue'
 
@@ -57,13 +40,17 @@ import Banner from './Banner.vue'
     components:{
       InputConsole,
       OutputConsole,
-      Banner
+      Banner,
+      Links
       
     },    
+    created(){
+    console.log('The id is: ' + this.$route.params.name);
+      this.$store.dispatch('getAlgoByName',{ name: this.$route.params.name});
+    },
     methods:{
       onSubmit(value){
           this.output = value
-
       }
     },
     data(){
@@ -72,7 +59,9 @@ import Banner from './Banner.vue'
     computed:{
       result(){
         return this.output 
-
+      },
+      algo(){
+        return this.$store.state.algorithm
       }
     }
 }

@@ -3,17 +3,17 @@
         <div class="algo-list-wrapper">
             <div class="algo-avatar">
                 <a href="/users/keshavashiya" alt="">
-                <img src="https://cdn0.iconfinder.com/data/icons/web-and-apps-develop/512/coding_php_code_html_programming_web_java_script_editor_website_development_css_build_program_flat_design_icon-512.png" class="avatar">
+                <img :src="icon" class="avatar">
                 </a>
             </div> 
             <div class="algo-info">
                 <div>
-                    <router-link  class="algo-list-link" :to="'/algorithm/'+id">
-                        <span class="algo-info__name">{{title}}</span>
+                    <router-link  class="algo-list-link" :to="'/algorithm/'+name">
+                        <span class="algo-info__name">{{name | capitalize}}</span>
                     </router-link>
 
-                    <p class="algo-url">{{id}}</p> 
-                    <p class="algo-list-body">{{desc}}</p>
+                    <p class="algo-url">{{description.title | capitalize}}</p> 
+                    <p class="algo-list-body">{{description.details | truncate(100)}}</p>
                 </div> 
             </div>
             <hr>
@@ -24,10 +24,12 @@
 export default {
     name: 'AlgoItem',
     props:{
-        title:String,
-        id:String,
-        desc:String
-
+        name:String,
+        description:Object,
+        icon:String
     }
 }
 </script>
+<style>
+
+</style>
