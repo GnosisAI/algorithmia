@@ -31,6 +31,7 @@
 import InputConsole from './InputConsole.vue'
 import OutputConsole from './OutputConsole.vue'
 import Links from './Links.vue'
+import axios from 'axios';
 
 
 import Banner from './Banner.vue'
@@ -49,8 +50,22 @@ import Banner from './Banner.vue'
       this.$store.dispatch('getAlgoByName',{ name: this.$route.params.name});
     },
     methods:{
+       objToString (obj) {
+          var str = '{\n';
+          for (var p in obj) {
+              if (obj.hasOwnProperty(p)) {
+                  str += '\t"' +p + '" : "' + obj[p] + '"\n';
+              }
+          }
+          str += '}'
+          return str;
+      },
       onSubmit(value){
-          this.output = value
+      axios.get('http://35.233.196.47:8081/api/algorithm/predict/conv')
+                .then(prediction => {
+                  this.output = this.objToString(prediction.data)
+                })
+        
       }
     },
     data(){
