@@ -1,14 +1,14 @@
 <template>
 
                 <li class="media category col-md-3" >
-                    <a href="/tags/text-analysis" >
+                    <router-link  class="algo-list-link" :to="'/cat/'+title">
                         <div class="media-left" ><img src="@/assets/images/categories/text-analysis.svg" class="media-object category-icon"
                             ></div>
                         <div class="media-body" >
                         <h4 class="media-heading" >{{title}}</h4>
                         <p >{{desc}}</p>
                         </div>
-                    </a>
+                    </router-link>
                 </li>
 
 

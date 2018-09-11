@@ -4,8 +4,9 @@
 
             <ul class="tag-list" >
                 <li class="tag-item tag-pills" v-for="(tag, index) in tags" :key="index">
-                    <a href="/tags/utilities" title="Ready to use microservices"
-                    ><span >{{tag}}</span></a>
+                    <router-link  class="algo-list-link" :to="'/cat/'+tag">
+                        <span >{{tag}}</span>
+                    </router-link>
                 </li>
             </ul>
     </div>
