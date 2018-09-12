@@ -1,6 +1,6 @@
 <template>
 <div class="col-md-12" >
-            <h3 class="mb-32" >Browse all algorithms:</h3>
+            
             <div >
               <ul class="nav nav-tabs">
                 <li role="presentation" class="active"><a role="tab"><i class="fa fa-star"></i> Top Rated</a></li>
@@ -57,41 +57,13 @@ export default {
   components:{
     AlgoItem
   },
-  created(){
-    this.$store.dispatch('getAlgos');
-  },
-  computed:{
-    algorithmsList(){
-
-      return this.$store.state.algorithms
-    }
+  props:{
+    algorithmsList:Array
   },
   show:false,
   data(){
     this.show = true;
     return {
-      algorithms:[
-              {
-                  id:"text-analysis",
-                  title:"Text Analysis",
-                  desc:"Make sense of unstructured text"
-              },
-                            {
-                  id:"machine-learning",
-                  title:"Machine Learning",
-                  desc:"Teach your app to teach itself"
-              },
-                            {
-                  id:"computer-vision",
-                  title:"Computer Vision",
-                  desc:"Identify objects in images"
-              },
-                            {
-                  id:"deep-learning.",
-                  title:"Deep Learning",
-                  desc:"Learn from your data"
-              }          
-      ]
     }
   }
 

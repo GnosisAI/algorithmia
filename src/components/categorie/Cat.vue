@@ -3,7 +3,7 @@
       <div class="row" >
         <Search/>
         <CatDesc :title="getTitle"/>
-        <Algorithms/>
+        <Algorithms :algorithms-list="algorithmsList"/>
       </div>
     </div>
 </template>
@@ -25,9 +25,15 @@ export default {
     return{
     }
   },
+  created(){
+    this.$store.dispatch('getCatAlgos',{ cat: this.$route.params.name});
+  },
   computed:{
     getTitle(){
       return this.$route.params.name
+    },
+    algorithmsList(){
+      return this.$store.state.catAlgorithms
     }
   }
 }

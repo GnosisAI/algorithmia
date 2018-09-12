@@ -3,7 +3,8 @@
       <div class="row" >
         <Search/>
         <Types/>
-        <Algorithms/>
+        <h3 class="mb-32" >Browse all algorithms:</h3>
+        <Algorithms :algorithms-list="algorithms"/>
       </div>
     </div>
 </template>
@@ -20,6 +21,15 @@ export default {
     Search,
     Types,
     Algorithms
+  },
+    created(){
+    this.$store.dispatch('getAlgos');
+  },
+  computed:{
+    algorithms(){
+
+    return this.$store.state.algorithms
+    }
   }
 }
 </script>
