@@ -739,7 +739,7 @@ fieldset[disabled] .btn-flat:hover {
 
 .input-group-btn .btn {
     box-shadow: none;
-    border-width: .125rem
+    border-width: .066rem
 }
 
 .input-group-btn .btn.btn-primary:hover {
@@ -747,15 +747,6 @@ fieldset[disabled] .btn-flat:hover {
     border-color: #883ff2
 }
 
-.input-group-btn .btn.btn-sm {
-    height: 2.5rem;
-    padding: 0 1rem
-}
-
-.input-group-btn .btn.btn-lg {
-    height: 3.5rem;
-    padding: 0 1rem
-}
 
 .input-group-addon {
     border-color: #fafafa
@@ -5958,10 +5949,7 @@ form textarea {
     line-height: 1
 }
 
-.inline-form-control {
-    width: 200px;
-    display: inline-block
-}
+
 
 .custom-checkbox {
     cursor: pointer
